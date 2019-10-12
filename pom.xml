@@ -12,6 +12,7 @@
         <module>java-common</module>
         <module>apollo-configuration-demo</module>
         <module>apollo-demo</module>
+        <module>daily-demo</module>
     </modules>
 
     <properties>

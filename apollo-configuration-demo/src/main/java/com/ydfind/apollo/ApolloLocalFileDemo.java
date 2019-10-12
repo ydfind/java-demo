@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ApolloLocalFileDemo {
     private static final Logger logger = LoggerFactory.getLogger(ApolloLocalFileDemo.class);
-    private String DEFAULT_VALUE = "undefined";
+    private static final String DEFAULT_VALUE = "undefined";
     private Config config;
 
     public ApolloLocalFileDemo() {

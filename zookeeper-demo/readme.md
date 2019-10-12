@@ -1,0 +1,1 @@
+MainApp能创建一个znode，并设置值

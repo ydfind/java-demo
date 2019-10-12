@@ -22,7 +22,7 @@ import java.io.InputStreamReader;
  */
 public class ApolloConfigDemo {
   private static final Logger logger = LoggerFactory.getLogger(ApolloConfigDemo.class);
-  private String DEFAULT_VALUE = "undefined";
+  private static final String DEFAULT_VALUE = "undefined";
   private Config config;
   private Config yamlConfig;
   private Config publicConfig;
