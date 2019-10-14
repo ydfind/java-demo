@@ -13,6 +13,7 @@
         <module>apollo-configuration-demo</module>
         <module>apollo-demo</module>
         <module>daily-demo</module>
+        <module>gof-demo</module>
     </modules>
 
     <properties>
