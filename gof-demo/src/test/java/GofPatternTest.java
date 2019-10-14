@@ -1,5 +1,4 @@
-import com.ydfind.gof.factory.Shape;
-import com.ydfind.gof.factory.ShapeFactory;
+import com.ydfind.gof.factory.*;
 import org.junit.Test;
 
 /**
@@ -10,27 +9,46 @@ import org.junit.Test;
 public class GofPatternTest {
 
     /**
-     * 工厂方法测试类
+     * 工厂模式 测试
      */
     @Test
     public void testFactory(){
-        ShapeFactory shapeFactory = new ShapeFactory();
-        Shape shape;
+        System.out.println("*********************工厂模式 测试********************************");
+        Factory factory;
+        Product product;
+        // 产品A1
+        factory = new Factory1();
+        product = factory.createProduct();
+        product.productMethod();
+        // 产品A2
+        factory = new Factory2();
+        product = factory.createProduct();
+        product.productMethod();
+    }
+
+    /**
+     * 简单工厂模式 测试
+     */
+    @Test
+    public void testSimpleFactory(){
+        System.out.println("*********************简单工厂模式 测试********************************");
+        SimpleFactory simpleFactory = new SimpleFactory();
+        Product product;
         // 简单工厂
-        shape = shapeFactory.getShape(ShapeFactory.SHAPE_CIRCLE);
-        shape.draw();
-        shape = shapeFactory.getShape(ShapeFactory.SHAPE_RECTANGLE);
-        shape.draw();
+        product = simpleFactory.createProduct(SimpleFactory.PRODUCT_1);
+        product.productMethod();
+        product = simpleFactory.createProduct(SimpleFactory.PRODUCT_2);
+        product.productMethod();
         // 多方法工厂
-        shape = shapeFactory.getCircle();
-        shape.draw();
-        shape = shapeFactory.getRectangle();
-        shape.draw();
+        product = simpleFactory.createProduct1();
+        product.productMethod();
+        product = simpleFactory.createProduct2();
+        product.productMethod();
         // 静态工厂
-        shape = ShapeFactory.getStaticCircle();
-        shape.draw();
-        shape = ShapeFactory.getStaticRectangle();
-        shape.draw();
+        product = simpleFactory.createStaticProduct1();
+        product.productMethod();
+        product = simpleFactory.createStaticProduct2();
+        product.productMethod();
     }
 
 }
