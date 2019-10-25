@@ -1,5 +1,8 @@
 package com.ydfind.gof.factory;
 
+import com.ydfind.gof.factory.simple.Pizza;
+import com.ydfind.gof.factory.simple.VeggiePizza;
+
 /**
  * 具体产品2的工厂类
  * @author ydfind
@@ -8,7 +11,7 @@ package com.ydfind.gof.factory;
 public class Factory2 implements Factory {
 
     @Override
-    public Product createProduct() {
-        return new Product2();
+    public Pizza createProduct() {
+        return new VeggiePizza();
     }
 }

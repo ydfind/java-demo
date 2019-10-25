@@ -1,4 +1,7 @@
 package com.ydfind.gof.factory;
+
+import com.ydfind.gof.factory.simple.Pizza;
+
 /**
  * 产品的工厂模式接口
  * @author ydfind
@@ -10,5 +13,5 @@ public interface Factory {
      * 创建产品对象
      * @return 产品对象
      */
-    Product createProduct();
+    Pizza createProduct();
 }
