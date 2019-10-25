@@ -6,7 +6,11 @@ import com.ydfind.gof.factory.factorymethod.PizzaStore1;
 import com.ydfind.gof.factory.factorymethod.ShangHaiPizzaStore;
 import com.ydfind.gof.factory.simple.PizzaStore;
 import com.ydfind.gof.factory.simple.SimplePizzaFactory;
+import com.ydfind.gof.strategy.Duck;
+import com.ydfind.gof.strategy.SimpleDuck;
+import com.ydfind.gof.strategy.SwanDuck;
 import org.junit.Test;
+import sun.java2d.pipe.SpanShapeRenderer;
 
 /**
  * 23种设计模式测试类
@@ -14,6 +18,8 @@ import org.junit.Test;
  * @date 2019.10.14
  */
 public class GofPatternTest {
+
+    /****************************工厂：简单工厂、工厂方法、抽象工厂*****************************/
 
     /**
      * 简单工厂模式 测试：Pizza.java、CheesePizza.java、VeggiePizza.java、SimplePizzaFactory.java
@@ -43,5 +49,14 @@ public class GofPatternTest {
         PizzaStore2 beijingStore = new BeijingPizzaStore2();
         shanghaiStore.orderPizza(PizzaStore2.CHEESE_PIZZA);
         beijingStore.orderPizza(PizzaStore2.VEGGIE_PIZZA);
+    }
+    /********************************* 策略 ***********************************************/
+    @Test
+    public void testStrategy(){
+        System.out.println("*********************策略 测试********************************");
+        Duck swanDuck = new SwanDuck();
+        Duck simpleDuck = new SimpleDuck();
+        swanDuck.performFly();
+        simpleDuck.performFly();
     }
 }
