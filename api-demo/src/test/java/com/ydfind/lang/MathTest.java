@@ -49,4 +49,16 @@ public class MathTest {
         angle = atan / Math.PI * 180;
         System.out.println(angle + "," + atan);
     }
+
+    @Test
+    public void testACos(){
+        double degrees = 0;
+        double radians = Math.toRadians(degrees);
+        double cos = Math.cos(radians);
+        double acos = Math.acos(cos);
+
+        System.out.println("radians = " + radians);
+        System.out.println("cos = " + cos);
+        System.out.println("acos = " + acos);
+    }
 }

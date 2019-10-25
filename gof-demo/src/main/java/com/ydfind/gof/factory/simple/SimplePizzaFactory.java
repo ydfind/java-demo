@@ -1,9 +1,5 @@
 package com.ydfind.gof.factory.simple;
 
-import com.ydfind.gof.factory.simple.CheesePizza;
-import com.ydfind.gof.factory.simple.Pizza;
-import com.ydfind.gof.factory.simple.VeggiePizza;
-
 /**
  * 简单Pizza工厂
  * @author ydfind
