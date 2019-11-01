@@ -1,5 +1,6 @@
 package com.ydfind.datastructure.avl;
 
+import com.ydfind.datastructure.tree.AvlNode;
 import org.junit.Test;
 
 import java.util.Objects;

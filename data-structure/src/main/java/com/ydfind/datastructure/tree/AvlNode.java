@@ -1,4 +1,4 @@
-package com.ydfind.datastructure.avl;
+package com.ydfind.datastructure.tree;
 
 import lombok.Data;
 

@@ -24,8 +24,7 @@ public class RedBlackTree<AnyType extends Comparable<? super AnyType>>
     /**
      * Construct the tree.
      */
-    public RedBlackTree( )
-    {
+    public RedBlackTree() {
         nullNode = new RedBlackNode<>( null );
         nullNode.left = nullNode.right = nullNode;
         header      = new RedBlackNode<>( null );
@@ -287,25 +286,83 @@ public class RedBlackTree<AnyType extends Comparable<? super AnyType>>
     private RedBlackNode<AnyType> parent;
     private RedBlackNode<AnyType> grand;
     private RedBlackNode<AnyType> great;
+/****************************************测试**********************************************/
+    /*******************************************打印***********************************************/
+    public void printTree1() {
+        if(isEmpty()) {
+            System.out.println("Empty tree");
+        } else {
+            System.out.println("\n中序：left data right--------------");
+            printTree1(header.right);
+            System.out.println("\n先序：data left right--------------");
+            printPreTree1(header.right);
+        }
+    }
+
+    private void printPreTree1( RedBlackTree.RedBlackNode<AnyType> t ) {
+        if(t != nullNode){
+            if(t.color == BLACK) {
+                System.out.print(t.element + " ");
+            }else {
+                System.out.print(t.element + "_ ");
+            }
+            if(t.right != nullNode || t.left != nullNode) {
+//                System.out.print("(");
+                printPreTree1(t.left);
+//                System.out.print(",");
+                printPreTree1(t.right);
+//                System.out.print(")");
+            }
+        }
+    }
+
+    private void printTree1( RedBlackTree.RedBlackNode<AnyType> t ) {
+        if(t != nullNode){
+            if(t.left != nullNode) {
+//                System.out.print("(");
+                printTree1(t.left);
+//                System.out.print(")");
+            }
+            if(t.color == BLACK) {
+                System.out.print(t.element + " ");
+            }else {
+                System.out.print(t.element + "_ ");
+            }
+            if(t.right != nullNode) {
+//                System.out.print("(");
+                printTree1(t.right);
+//                System.out.print(")");
+            }
+        }
+    }
 
 
         // Test program
     public static void main( String [ ] args )
     {
-        RedBlackTree<Integer> t = new RedBlackTree<>( );
-        final int NUMS = 400000;
-        final int GAP  =  35461;
+//        RedBlackTree<Integer> t = new RedBlackTree<>( );
+//        final int NUMS = 400000;
+//        final int GAP  =  35461;
+//
+//        System.out.println( "Checking... (no more output means success)" );
+//
+//        for( int i = GAP; i != 0; i = ( i + GAP ) % NUMS )
+//            t.insert( i );
+//
+//        if( t.findMin( ) != 1 || t.findMax( ) != NUMS - 1 )
+//            System.out.println( "FindMin or FindMax error!" );
+//
+//        for( int i = 1; i < NUMS; i++ )
+//             if( !t.contains( i ) )
+//                 System.out.println( "Find error1!" );
 
-        System.out.println( "Checking... (no more output means success)" );
 
-        for( int i = GAP; i != 0; i = ( i + GAP ) % NUMS )
-            t.insert( i );
-
-        if( t.findMin( ) != 1 || t.findMax( ) != NUMS - 1 )
-            System.out.println( "FindMin or FindMax error!" );
-
-        for( int i = 1; i < NUMS; i++ )
-             if( !t.contains( i ) )
-                 System.out.println( "Find error1!" );
+        RedBlackTree redBlackTree = new RedBlackTree();
+        int[] items = {10, 85, 15, 70, 20, 60, 30, 50, 65, 80, 90, 40, 5, 55};
+        for(int item: items) {
+            redBlackTree.insert(item);
+        }
+        redBlackTree.printTree1();
+        System.out.print("\n");
     }
 }
